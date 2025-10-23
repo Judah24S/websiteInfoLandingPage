@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Boom-In Network</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="boom-in-static">
+    <nav class="boom-in-appbar">
+      <div class="boom-in-appbar-logo" id="boomInAppbarLogo">Boom-In</div>
+      <ul class="boom-in-options-list">
+        <li class="boom-in-option-item" onclick="window.location.href='index.html'" data-page="home">Home</li>
+        <li class="boom-in-option-item" onclick="window.location.href='index.html#platform'" data-page="platform">Platform</li>
+        <li class="boom-in-option-item" onclick="window.location.href='index.html#contact'" data-page="contact">Contact</li>
+      </ul>
+    </nav>
+    <div class="boom-in-center privacy-center-view">
+      <section class="privacy-policy-section">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us. This Privacy Policy explains how we collect and use information on our website.</p>
+        <h2>Information We Collect</h2>
+        <ul>
+          <li>Your name</li>
+          <li>Your email address</li>
+          <li>The content of your message</li>
+        </ul>
+        <h2>How We Use Your Information</h2>
+        <p>We use this information to respond to your inquiries and provide the services you request. We do not sell or share your personal information with third parties for marketing purposes.</p>
+        <h2>Data Security</h2>
+        <p>We take reasonable measures to protect your information from unauthorized access or disclosure.</p>
+        <h2>Cookies and Tracking</h2>
+        <p>Our website may use cookies or other tracking technologies. Currently, we do not actively track personal behavior, but this may be updated in the future.</p>
+        <h2>Your Rights</h2>
+        <p>You can request that we delete the personal information you submitted via the contact form at any time by contacting us at <a href="mailto:boominnetworkenterprise@gmail.com">boominnetworkenterprise@gmail.com</a>.</p>
+        <h2>Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or how your information is handled, please contact us at <a href="mailto:boominnetworkenterprise@gmail.com">boominnetworkenterprise@gmail.com</a>.</p>
+      </section>
+    </div>
+    <footer class="boom-in-footer">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="#" class="footer-link" onclick="window.location.href='index.html'">Home</a>
+          <a href="#" class="footer-link" onclick="window.location.href='index.html#platform'">Platform</a>
+          <a href="#" class="footer-link" onclick="window.location.href='index.html#contact'">Contact</a>
+        </nav>
+        <div class="footer-policy-btn-container">
+          <button id="privacyPolicyBtn" class="footer-policy-btn" disabled>Privacy Policy</button>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 Boom-In Network. All rights reserved.</div>
+    </footer>
+    <script>
+      // Enable Privacy Policy button only after scrolling to bottom
+      document.addEventListener('DOMContentLoaded', function () {
+        const privacyBtn = document.getElementById('privacyPolicyBtn');
+        if (privacyBtn) {
+          function checkScroll() {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            if (window.scrollY >= scrollable - 2) {
+              privacyBtn.disabled = false;
+            } else {
+              privacyBtn.disabled = true;
+            }
+          }
+          window.addEventListener('scroll', checkScroll);
+          checkScroll();
+          privacyBtn.addEventListener('click', function () {
+            if (!privacyBtn.disabled) {
+              window.location.href = 'privacy.html';
+            }
+          });
+        }
+      });
+    </script>
+  </main>
+</body>
+</html>

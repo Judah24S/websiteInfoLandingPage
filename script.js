@@ -1,345 +1,178 @@
-// Mobile navigation toggle
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
-
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-
-  // Animate hamburger menu
-  const bars = document.querySelectorAll(".bar");
-  bars.forEach((bar, index) => {
-    if (navMenu.classList.contains("active")) {
-      if (index === 0)
-        bar.style.transform = "rotate(-45deg) translate(-5px, 6px)";
-      if (index === 1) bar.style.opacity = "0";
-      if (index === 2)
-        bar.style.transform = "rotate(45deg) translate(-5px, -6px)";
-    } else {
-      bar.style.transform = "none";
-      bar.style.opacity = "1";
-    }
-  });
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-    const bars = document.querySelectorAll(".bar");
-    bars.forEach((bar) => {
-      bar.style.transform = "none";
-      bar.style.opacity = "1";
+// Show privacy policy popup when clicking footer button
+document.addEventListener('DOMContentLoaded', function () {
+  const privacyBtn = document.getElementById('privacyPolicyBtn');
+  const privacyPopup = document.getElementById('privacyPopup');
+  const privacyCloseBtn = document.getElementById('privacyCloseBtn');
+  
+  if (privacyBtn && privacyPopup) {
+    privacyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      privacyPopup.style.display = 'flex';
     });
-  });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      const offsetTop = target.offsetTop - 70; // Account for fixed navbar
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-// Navbar background change on scroll
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.style.background = "rgba(255, 255, 255, 0.98)";
-    navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
-  } else {
-    navbar.style.background = "rgba(255, 255, 255, 0.95)";
-    navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.05)";
   }
-});
-
-// Contact form handling
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
-
-    // Simple validation
-    if (!name || !email || !subject || !message) {
-      showNotification("Please fill in all fields", "error");
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      showNotification("Please enter a valid email address", "error");
-      return;
-    }
-
-    // Simulate form submission (Replace with real backend integration)
-    showNotification(
-      "Application received! A Diamond Network representative will contact you within 24 hours to verify your baseball background.",
-      "success"
-    );
-    this.reset();
-
-    // TODO: Replace with actual form submission to backend
-    // Example: submitToServer({name, email, subject, message});
-  });
-}
-
-// Email validation helper
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
-// Notification system
-function showNotification(message, type = "info") {
-  // Remove existing notification
-  const existingNotification = document.querySelector(".notification");
-  if (existingNotification) {
-    existingNotification.remove();
+  
+  if (privacyCloseBtn && privacyPopup) {
+    privacyCloseBtn.addEventListener('click', function() {
+      privacyPopup.style.display = 'none';
+    });
   }
-
-  // Create notification element
-  const notification = document.createElement("div");
-  notification.className = `notification notification-${type}`;
-  notification.textContent = message;
-
-  // Add styles
-  Object.assign(notification.style, {
-    position: "fixed",
-    top: "100px",
-    right: "20px",
-    background:
-      type === "success" ? "#10b981" : type === "error" ? "#ef4444" : "#3b82f6",
-    color: "white",
-    padding: "1rem 1.5rem",
-    borderRadius: "8px",
-    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-    zIndex: "10000",
-    transform: "translateX(400px)",
-    transition: "transform 0.3s ease",
-    maxWidth: "300px",
-    fontSize: "0.9rem",
-    fontWeight: "500",
-  });
-
-  document.body.appendChild(notification);
-
-  // Animate in
-  setTimeout(() => {
-    notification.style.transform = "translateX(0)";
-  }, 100);
-
-  // Remove after 5 seconds
-  setTimeout(() => {
-    notification.style.transform = "translateX(400px)";
-    setTimeout(() => {
-      if (notification.parentNode) {
-        notification.parentNode.removeChild(notification);
+  
+  // Close popup when clicking overlay
+  if (privacyPopup) {
+    privacyPopup.addEventListener('click', function(e) {
+      if (e.target === privacyPopup) {
+        privacyPopup.style.display = 'none';
       }
-    }, 300);
-  }, 5000);
-}
-
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.animation = "fadeInUp 0.8s ease-out forwards";
-    }
-  });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener("DOMContentLoaded", () => {
-  const elementsToObserve = document.querySelectorAll(
-    ".service-card, .team-member, .stat, .feature"
-  );
-
-  elementsToObserve.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    observer.observe(el);
-  });
+    });
+  }
 });
-
-// Counter animation for stats
-function animateCounters() {
-  const counters = document.querySelectorAll(".stat h3");
-
-  counters.forEach((counter) => {
-    const target = parseInt(counter.textContent);
-    const increment = target / 100;
-    let current = 0;
-
-    const updateCounter = () => {
-      if (current < target) {
-        current += increment;
-        counter.textContent =
-          Math.ceil(current) + (counter.textContent.includes("%") ? "%" : "+");
-        requestAnimationFrame(updateCounter);
+// Footer navigation links scroll to respective sections
+document.addEventListener('DOMContentLoaded', function () {
+  const homeLink = document.getElementById('footerHomeLink');
+  const platformLink = document.getElementById('footerPlatformLink');
+  const contactLink = document.getElementById('footerContactLink');
+  const homeTab = document.querySelector('.boom-in-option-item[data-page="home"]');
+  const platformTab = document.querySelector('.boom-in-option-item[data-page="platform"]');
+  const contactTab = document.querySelector('.boom-in-option-item[data-page="contact"]');
+  if (homeLink && homeTab) {
+    homeLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      homeTab.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (platformLink && platformTab) {
+    platformLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      platformTab.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (contactLink && contactTab) {
+    contactLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      contactTab.click();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+// Enable Privacy Policy button only after scrolling to bottom
+document.addEventListener('DOMContentLoaded', function () {
+  const privacyBtn = document.getElementById('privacyPolicyBtn');
+  if (privacyBtn) {
+    function checkScroll() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      if (window.scrollY >= scrollable - 2) {
+        privacyBtn.disabled = false;
       } else {
-        counter.textContent = counter.textContent; // Keep original format
+        privacyBtn.disabled = true;
       }
-    };
-
-    updateCounter();
-  });
-}
-
-// Trigger counter animation when stats section is visible
-const statsSection = document.querySelector(".about-stats");
-if (statsSection) {
-  const statsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounters();
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  statsObserver.observe(statsSection);
-}
-
-// Add loading animation
-window.addEventListener("load", () => {
-  document.body.style.opacity = "0";
-  document.body.style.transition = "opacity 0.5s ease";
-
-  setTimeout(() => {
-    document.body.style.opacity = "1";
-  }, 100);
-});
-
-// Handle window resize for responsive navigation
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 768) {
-    navMenu.classList.remove("active");
-    const bars = document.querySelectorAll(".bar");
-    bars.forEach((bar) => {
-      bar.style.transform = "none";
-      bar.style.opacity = "1";
-    });
-  }
-});
-
-// Keyboard accessibility for navigation
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    navMenu.classList.remove("active");
-    const bars = document.querySelectorAll(".bar");
-    bars.forEach((bar) => {
-      bar.style.transform = "none";
-      bar.style.opacity = "1";
-    });
-  }
-});
-
-// Add focus indicators for accessibility
-document.querySelectorAll(".nav-link, .btn, .social-links a").forEach((el) => {
-  el.addEventListener("focus", function () {
-    this.style.outline = "2px solid #667eea";
-    this.style.outlineOffset = "2px";
-  });
-
-  el.addEventListener("blur", function () {
-    this.style.outline = "none";
-  });
-});
-
-// Preload images and optimize performance
-document.addEventListener("DOMContentLoaded", () => {
-  // Add lazy loading for images if any are added later
-  const images = document.querySelectorAll("img[data-src]");
-
-  if ("IntersectionObserver" in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.remove("lazy");
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-
-    images.forEach((img) => imageObserver.observe(img));
-  }
-});
-
-// Add scroll-to-top functionality
-const createScrollToTop = () => {
-  const scrollBtn = document.createElement("button");
-  scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-  scrollBtn.className = "scroll-to-top";
-
-  Object.assign(scrollBtn.style, {
-    position: "fixed",
-    bottom: "30px",
-    right: "30px",
-    width: "50px",
-    height: "50px",
-    borderRadius: "50%",
-    border: "none",
-    background: "linear-gradient(135deg, #667eea, #764ba2)",
-    color: "white",
-    fontSize: "1.2rem",
-    cursor: "pointer",
-    opacity: "0",
-    visibility: "hidden",
-    transition: "all 0.3s ease",
-    zIndex: "1000",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
-  });
-
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  scrollBtn.addEventListener("mouseenter", () => {
-    scrollBtn.style.transform = "translateY(-3px)";
-    scrollBtn.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.3)";
-  });
-
-  scrollBtn.addEventListener("mouseleave", () => {
-    scrollBtn.style.transform = "translateY(0)";
-    scrollBtn.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
-  });
-
-  document.body.appendChild(scrollBtn);
-
-  // Show/hide scroll button
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      scrollBtn.style.opacity = "1";
-      scrollBtn.style.visibility = "visible";
-    } else {
-      scrollBtn.style.opacity = "0";
-      scrollBtn.style.visibility = "hidden";
     }
-  });
-};
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+    // Privacy button click handler is handled in the first event listener above
+  }
+});
+// Show only the relevant content section based on selected appbar option
+document.addEventListener('DOMContentLoaded', function () {
+  const options = document.querySelectorAll('.boom-in-option-item');
+  const homeContent = document.getElementById('homeContent');
+  const platformContent = document.getElementById('platformContent');
+  const contactContent = document.getElementById('contactContent');
+  const appbarLogo = document.getElementById('boomInAppbarLogo');
+  const boomInMainTitle = document.getElementById('boomInMainTitle');
+  const homeBgVideo = document.getElementById('homeBgVideo');
+  const homeBgVideoContainer = document.querySelector('.home-bg-video-container');
 
-// Initialize scroll to top button
-createScrollToTop();
+  function showPage(page) {
+    const footer = document.querySelector('.boom-in-footer');
+    homeContent.style.display = (page === 'home') ? 'flex' : 'none';
+    platformContent.style.display = (page === 'platform') ? 'flex' : 'none';
+    contactContent.style.display = (page === 'contact') ? 'flex' : 'none';
+    if (footer) footer.style.display = 'block';
+    // Always show Boom-In logo in appbar
+    if (appbarLogo) appbarLogo.style.display = 'block';
+    // Video and home title logic
+    if (homeBgVideo && homeBgVideoContainer) {
+      if (page === 'home') {
+        homeBgVideoContainer.style.display = 'none';
+        if (boomInMainTitle) boomInMainTitle.style.display = 'block';
+        // Wait for the Boom-In title fade animation, then show video
+        setTimeout(() => {
+          // Hide Boom-In main title when video starts
+          if (boomInMainTitle) boomInMainTitle.style.display = 'none';
+          homeBgVideoContainer.style.display = 'flex';
+          homeBgVideo.currentTime = 0;
+          homeBgVideo.play();
+        }, 1200); // match CSS animation duration
+      } else {
+        homeBgVideo.pause();
+        homeBgVideoContainer.style.display = 'none';
+        if (boomInMainTitle) boomInMainTitle.style.display = 'block';
+      }
+    }
+  }
+
+  if (homeBgVideo) {
+    homeBgVideo.addEventListener('ended', function () {
+      // Hide video and show Boom-In main title again
+      if (homeBgVideoContainer) homeBgVideoContainer.style.display = 'none';
+      if (boomInMainTitle) boomInMainTitle.style.display = 'block';
+    });
+  }
+
+  options.forEach(opt => {
+    opt.addEventListener('click', function () {
+      options.forEach(o => o.classList.remove('selected'));
+      this.classList.add('selected');
+      const page = this.getAttribute('data-page');
+      showPage(page);
+    });
+  });
+
+  // Make appbar logo clickable to return home
+  if (appbarLogo) {
+    appbarLogo.addEventListener('click', function () {
+      // Remove selected class from all options
+      options.forEach(o => o.classList.remove('selected'));
+      // Add selected class to home option
+      const homeOption = document.querySelector('.boom-in-option-item[data-page="home"]');
+      if (homeOption) {
+        homeOption.classList.add('selected');
+      }
+      // Navigate to home page
+      showPage('home');
+    });
+  }
+
+  // Initial state: show home
+  showPage('home');
+});
+
+// Handle contact form submission
+document.addEventListener('DOMContentLoaded', function () {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Contact from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailtoLink = `mailto:boominnetworkenterprise@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show confirmation message
+      alert('Opening your email client... Please send the email to complete your message.');
+      
+      // Reset form
+      contactForm.reset();
+    });
+  }
+});
