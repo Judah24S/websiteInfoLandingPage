@@ -147,6 +147,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initial state: show home
   showPage('home');
+  
+  // Mobile menu functionality
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileDropdown = document.getElementById('mobileDropdown');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  
+  if (mobileMenuToggle && mobileDropdown) {
+    // Toggle mobile menu
+    mobileMenuToggle.addEventListener('click', function() {
+      const isActive = mobileDropdown.classList.contains('active');
+      
+      if (isActive) {
+        mobileDropdown.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      } else {
+        mobileDropdown.classList.add('active');
+        mobileMenuToggle.classList.add('active');
+      }
+    });
+    
+    // Handle mobile nav item clicks
+    mobileNavItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Remove selected from all mobile items
+        mobileNavItems.forEach(i => i.classList.remove('selected'));
+        // Add selected to clicked item
+        this.classList.add('selected');
+        
+        // Also update desktop nav
+        options.forEach(o => o.classList.remove('selected'));
+        const page = this.getAttribute('data-page');
+        const desktopItem = document.querySelector(`.boom-in-option-item[data-page="${page}"]`);
+        if (desktopItem) {
+          desktopItem.classList.add('selected');
+        }
+        
+        // Navigate to page
+        showPage(page);
+        
+        // Close mobile menu
+        mobileDropdown.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!mobileMenuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+        mobileDropdown.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+  }
 });
 
 // Handle contact form submission
