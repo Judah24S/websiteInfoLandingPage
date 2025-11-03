@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boom-In Network - Connecting University Alumni</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boom-In Network - Connecting University Alumni</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-</head>
+  <body>
+    <main class="boom-in-static">
+      <nav class="boom-in-appbar">
+        <div class="boom-in-appbar-logo" id="boomInAppbarLogo">Boom-In</div>
 
-<body>
-  <main class="boom-in-static">
-    <nav class="boom-in-appbar">
-      <div class="boom-in-appbar-logo" id="boomInAppbarLogo">Boom-In</div>
-      
-      <!-- Desktop navigation -->
-      <ul class="boom-in-options-list desktop-nav">
-        <li class="boom-in-option-item selected" data-page="home">Home</li>
-        <li class="boom-in-option-item" data-page="platform">Platform</li>
-        <li class="boom-in-option-item" data-page="contact">Contact</li>
-      </ul>
-      
-      <!-- Mobile hamburger menu -->
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-    </nav>
-    
-    <!-- Mobile dropdown menu -->
-    <div class="mobile-dropdown" id="mobileDropdown">
-      <ul class="mobile-nav-list">
-        <li class="mobile-nav-item selected" data-page="home">Home</li>
-        <li class="mobile-nav-item" data-page="platform">Platform</li>
-        <li class="mobile-nav-item" data-page="contact">Contact</li>
-      </ul>
-    </div>
-    <!-- Home main title, visible before video -->
-    <div id="homeContent" class="boom-in-center">
-      <h1 class="boom-in-title" id="boomInMainTitle">Boom-In</h1>
-    </div>
-    <!-- Video background below appbar, hidden initially -->
+        <!-- Desktop navigation -->
+        <ul class="boom-in-options-list desktop-nav">
+          <li class="boom-in-option-item selected" data-page="home">Home</li>
+          <li class="boom-in-option-item" data-page="platform">Platform</li>
+          <li class="boom-in-option-item" data-page="contact">Contact</li>
+        </ul>
+
+        <!-- Mobile hamburger menu -->
+        <button
+          class="mobile-menu-toggle"
+          id="mobileMenuToggle"
+          aria-label="Toggle mobile menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile dropdown menu -->
+      <div class="mobile-dropdown" id="mobileDropdown">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item selected" data-page="home">Home</li>
+          <li class="mobile-nav-item" data-page="platform">Platform</li>
+          <li class="mobile-nav-item" data-page="contact">Contact</li>
+        </ul>
+      </div>
+      <!-- Home main title, visible before video -->
+      <div id="homeContent" class="boom-in-center">
+        <h1 class="boom-in-title" id="boomInMainTitle">Boom-In</h1>
+      </div>
+      <!-- Video background below appbar, hidden initially -->
+      <!--
     <div class="home-bg-video-container" style="display:none;">
       <video id="homeBgVideo" autoplay muted playsinline>
         <source src="assets/greece4horizontal.mp4" type="video/mp4">
@@ -53,130 +63,196 @@
         <span class="caption-main-text">MBA Cohort 2024 - Greece Trip</span>
       </div>
     </div>
-    <div id="platformContent" class="platform-hero-container" style="display:none;">
-      <section class="platform-hero">
-        <div class="platform-hero-content">
-          <div class="icon-mosaic-banner">
-            <div class="icon-mosaic-bg">
-              <i class="fas fa-users"></i>
-              <i class="fas fa-university"></i>
-              <i class="fas fa-lightbulb"></i>
-              <i class="fas fa-handshake"></i>
+    -->
+      <div
+        id="platformContent"
+        class="platform-hero-container"
+        style="display: none"
+      >
+        <section class="platform-hero">
+          <div class="platform-hero-content">
+            <div class="icon-mosaic-banner">
+              <div class="icon-mosaic-bg">
+                <i class="fas fa-users"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-lightbulb"></i>
+                <i class="fas fa-handshake"></i>
+                <i class="fas fa-comments"></i>
+                <i class="fas fa-calendar-alt"></i>
+                <i class="fas fa-rss"></i>
+                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-network-wired"></i>
+                <i class="fas fa-globe"></i>
+              </div>
+            </div>
+            <h1 class="icon-mosaic-title">
+              Connecting Alumni. Empowering Futures.
+            </h1>
+          </div>
+        </section>
+        <section class="platform-features-row">
+          <div class="platform-feature-card">
+            <div class="platform-feature-icon">
+              <i class="fas fa-compass"></i>
+            </div>
+            <h3>Explore</h3>
+            <p>
+              Stay updated on the latest activity and highlights across the
+              platform.
+            </p>
+          </div>
+          <div class="platform-feature-card">
+            <div class="platform-feature-icon">
               <i class="fas fa-comments"></i>
-              <i class="fas fa-calendar-alt"></i>
-              <i class="fas fa-rss"></i>
-              <i class="fas fa-graduation-cap"></i>
-              <i class="fas fa-network-wired"></i>
-              <i class="fas fa-globe"></i>
             </div>
+            <h3>Connect</h3>
+            <p>Communicate with others and build meaningful connections.</p>
           </div>
-          <h1 class="icon-mosaic-title">Connecting Alumni. Empowering Futures.</h1>
-        </div>
-      </section>
-      <section class="platform-features-row">
-        <div class="platform-feature-card">
-          <div class="platform-feature-icon"><i class="fas fa-compass"></i></div>
-          <h3>Explore</h3>
-          <p>Stay updated on the latest activity and highlights across the platform.</p>
-        </div>
-        <div class="platform-feature-card">
-          <div class="platform-feature-icon"><i class="fas fa-comments"></i></div>
-          <h3>Connect</h3>
-          <p>Communicate with others and build meaningful connections.</p>
-        </div>
-        <div class="platform-feature-card">
-          <div class="platform-feature-icon"><i class="fas fa-university"></i></div>
-          <h3>Discover</h3>
-          <p>Find groups, spaces, and people that match your interests.</p>
-        </div>
-        <div class="platform-feature-card">
-          <div class="platform-feature-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>Learn</h3>
-          <p>Access tools, resources, and insights to help you grow and succeed.</p>
-        </div>
-      </section>
-    </div>
-    <div id="contactContent" class="contact-page diagonal-contact" style="display:none;">
-      <div class="diagonal-container">
-        <div class="diagonal-left">
-          <form class="contact-form" id="contactForm">
-            <div class="contact-header-row">
-              <h2 class="contact-title">Contact Us</h2>
+          <div class="platform-feature-card">
+            <div class="platform-feature-icon">
+              <i class="fas fa-university"></i>
             </div>
-            <div class="form-group floating-label">
-              <input type="text" id="name" name="name" required />
-              <label for="name">Name</label>
-            </div>
-            <div class="form-group floating-label">
-              <input type="email" id="email" name="email" required />
-              <label for="email">Email</label>
-            </div>
-            <div class="form-group floating-label">
-              <textarea id="message" name="message" rows="5" required></textarea>
-              <label for="message">Message</label>
-            </div>
-            <button type="submit" class="contact-submit">Send Message</button>
-          </form>
-        </div>
-        <div class="diagonal-right">
-          <div class="contact-logo-large">Boom-In</div>
-          <div class="contact-info-block">
-            <div class="contact-info-item"><i class="fas fa-envelope"></i>
-              boominnetworkenterprise@gmail.com
-            </div>
-            <!--<div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Charleston, SC</div>-->
+            <h3>Discover</h3>
+            <p>Find groups, spaces, and people that match your interests.</p>
           </div>
-          <div class="contact-social">
-            <!--<a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>-->
-            <!--<a href="#" title="X"><span class="x-logo">𝕏</span></a>-->
-            <!--<a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>-->
+          <div class="platform-feature-card">
+            <div class="platform-feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Learn</h3>
+            <p>
+              Access tools, resources, and insights to help you grow and
+              succeed.
+            </p>
+          </div>
+        </section>
+      </div>
+      <div
+        id="contactContent"
+        class="contact-page diagonal-contact"
+        style="display: none"
+      >
+        <div class="diagonal-container">
+          <div class="diagonal-left">
+            <form class="contact-form" id="contactForm">
+              <div class="contact-header-row">
+                <h2 class="contact-title">Contact Us</h2>
+              </div>
+              <div class="form-group floating-label">
+                <input type="text" id="name" name="name" required />
+                <label for="name">Name</label>
+              </div>
+              <div class="form-group floating-label">
+                <input type="email" id="email" name="email" required />
+                <label for="email">Email</label>
+              </div>
+              <div class="form-group floating-label">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button type="submit" class="contact-submit">Send Message</button>
+            </form>
+          </div>
+          <div class="diagonal-right">
+            <div class="contact-logo-large">Boom-In</div>
+            <div class="contact-info-block">
+              <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                boominnetworkenterprise@gmail.com
+              </div>
+              <!--<div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Charleston, SC</div>-->
+            </div>
+            <div class="contact-social">
+              <!--<a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>-->
+              <!--<a href="#" title="X"><span class="x-logo">𝕏</span></a>-->
+              <!--<a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>-->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Privacy Policy Popup -->
-    <div id="privacyPopup" class="privacy-popup-overlay" style="display:none;">
-      <div class="privacy-popup">
-        <div class="privacy-popup-header">
-          <h1>Privacy Policy</h1>
-          <button class="privacy-close-btn" id="privacyCloseBtn">&times;</button>
-        </div>
-        <div class="privacy-popup-content">
-          <p>Your privacy is important to us. This Privacy Policy explains how we collect and use information on our website.</p>
-          <h2>Information We Collect</h2>
-          <ul>
-            <li>Your name</li>
-            <li>Your email address</li>
-            <li>The content of your message</li>
-          </ul>
-          <h2>How We Use Your Information</h2>
-          <p>We use this information to respond to your inquiries and provide the services you request. We do not sell or share your personal information with third parties for marketing purposes.</p>
-          <h2>Data Security</h2>
-          <p>We take reasonable measures to protect your information from unauthorized access or disclosure.</p>
-          <h2>Cookies and Tracking</h2>
-          <p>Our website may use cookies or other tracking technologies. Currently, we do not actively track personal behavior, but this may be updated in the future.</p>
-          <h2>Your Rights</h2>
-          <p>You can request that we delete the personal information you submitted via the contact form at any time by contacting us at <a href="mailto:boominnetworkenterprise@gmail.com">boominnetworkenterprise@gmail.com</a>.</p>
-          <h2>Contact Us</h2>
-          <p>If you have any questions about this Privacy Policy or how your information is handled, please contact us at <a href="mailto:boominnetworkenterprise@gmail.com">boominnetworkenterprise@gmail.com</a>.</p>
+      <!-- Privacy Policy Popup -->
+      <div
+        id="privacyPopup"
+        class="privacy-popup-overlay"
+        style="display: none"
+      >
+        <div class="privacy-popup">
+          <div class="privacy-popup-header">
+            <h1>Privacy Policy</h1>
+            <button class="privacy-close-btn" id="privacyCloseBtn">
+              &times;
+            </button>
+          </div>
+          <div class="privacy-popup-content">
+            <p>
+              Your privacy is important to us. This Privacy Policy explains how
+              we collect and use information on our website.
+            </p>
+            <h2>Information We Collect</h2>
+            <ul>
+              <li>Your name</li>
+              <li>Your email address</li>
+              <li>The content of your message</li>
+            </ul>
+            <h2>How We Use Your Information</h2>
+            <p>
+              We use this information to respond to your inquiries and provide
+              the services you request. We do not sell or share your personal
+              information with third parties for marketing purposes.
+            </p>
+            <h2>Data Security</h2>
+            <p>
+              We take reasonable measures to protect your information from
+              unauthorized access or disclosure.
+            </p>
+            <h2>Cookies and Tracking</h2>
+            <p>
+              Our website may use cookies or other tracking technologies.
+              Currently, we do not actively track personal behavior, but this
+              may be updated in the future.
+            </p>
+            <h2>Your Rights</h2>
+            <p>
+              You can request that we delete the personal information you
+              submitted via the contact form at any time by contacting us at
+              <a href="mailto:boominnetworkenterprise@gmail.com"
+                >boominnetworkenterprise@gmail.com</a
+              >.
+            </p>
+            <h2>Contact Us</h2>
+            <p>
+              If you have any questions about this Privacy Policy or how your
+              information is handled, please contact us at
+              <a href="mailto:boominnetworkenterprise@gmail.com"
+                >boominnetworkenterprise@gmail.com</a
+              >.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-  <footer class="boom-in-footer">
-    <div class="footer-content">
-      <nav class="footer-nav">
-  <a href="#" class="footer-link" id="footerHomeLink">Home</a>
-  <a href="#" class="footer-link" id="footerPlatformLink">Platform</a>
-  <a href="#" class="footer-link" id="footerContactLink">Contact</a>
-      </nav>
-      <div class="footer-policy-btn-container">
-        <button id="privacyPolicyBtn" class="footer-policy-btn" disabled>Privacy Policy</button>
+    </main>
+    <footer class="boom-in-footer">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="#" class="footer-link" id="footerHomeLink">Home</a>
+          <a href="#" class="footer-link" id="footerPlatformLink">Platform</a>
+          <a href="#" class="footer-link" id="footerContactLink">Contact</a>
+        </nav>
+        <div class="footer-policy-btn-container">
+          <button id="privacyPolicyBtn" class="footer-policy-btn" disabled>
+            Privacy Policy
+          </button>
+        </div>
       </div>
-    </div>
-  <div class="footer-bottom">&copy; 2025 Boom-In Network. All rights reserved.</div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-
+      <div class="footer-bottom">
+        &copy; 2025 Boom-In Network. All rights reserved.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
