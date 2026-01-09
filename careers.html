@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join Boom-In – connecting students and alumni in real-time. We're hiring!"
+    />
+    <title>Careers at Boom-In</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <a
+            href="index.html"
+            style="
+              text-decoration: none;
+              color: var(--primary-color);
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+            "
+          >
+            <span class="logo-icon">🔗</span>
+            <span>Boom-In</span>
+          </a>
+        </div>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#features" class="nav-link">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="careers.html" class="nav-link">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link contactTrigger">Contact</a>
+          </li>
+        </ul>
+
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-menu">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li>
+          <a href="index.html#features" class="mobile-nav-link">Features</a>
+        </li>
+        <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
+        <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+        <li><a href="#" class="mobile-nav-link contactTrigger">Contact</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- Careers Hero Section -->
+      <section class="careers-hero">
+        <div class="careers-hero-content">
+          <h1>Join the Boom-In Team</h1>
+          <p>Build the network that connects the world's alumni community</p>
+        </div>
+      </section>
+
+      <!-- Careers Info Section -->
+      <section class="careers-info">
+        <div class="careers-info-content">
+          <h2>Why Work at Boom-In?</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <i class="fas fa-rocket"></i>
+              <h3>Build Something Big</h3>
+              <p>Help shape the future of alumni networking globally</p>
+            </div>
+            <div class="benefit-card">
+              <i class="fas fa-users"></i>
+              <h3>Work with Talented People</h3>
+              <p>Collaborate with passionate founders and team members</p>
+            </div>
+            <div class="benefit-card">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Solve Real Problems</h3>
+              <p>
+                Address meaningful challenges that impact education and careers
+              </p>
+            </div>
+            <div class="benefit-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Early-Stage Impact</h3>
+              <p>Direct influence on company direction and growth</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Job Postings Section -->
+      <section class="job-postings">
+        <div class="section-header">
+          <h2 class="section-title">Open Positions</h2>
+          <p class="section-subtitle">
+            We're looking for talented individuals to join our team
+          </p>
+        </div>
+
+        <div class="jobs-container">
+          <!-- Software Engineer -->
+          <div class="job-card">
+            <div class="job-header">
+              <h3>Software Engineer</h3>
+              <span class="job-type">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span class="job-location"
+                ><i class="fas fa-map-marker-alt"></i> Remote</span
+              >
+              <span class="job-level"
+                ><i class="fas fa-chart-line"></i> Mid/Senior Level</span
+              >
+            </div>
+            <p class="job-description">
+              We're looking for a talented Software Engineer to build and scale
+              our platform. You'll work on full-stack development, contribute to
+              architecture decisions, and help us grow our product from the
+              ground up.
+            </p>
+            <div class="job-requirements">
+              <h4>What We're Looking For:</h4>
+              <ul>
+                <li>3+ years of software development experience</li>
+                <li>
+                  Proficiency in modern web technologies (React, Node.js, or
+                  similar)
+                </li>
+                <li>Strong problem-solving and communication skills</li>
+                <li>Experience with databases and API design</li>
+                <li>Passion for building products that users love</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary contactTrigger">Apply Now</a>
+          </div>
+
+          <!-- Sales Representative -->
+          <div class="job-card">
+            <div class="job-header">
+              <h3>Sales Representative</h3>
+              <span class="job-type">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span class="job-location"
+                ><i class="fas fa-map-marker-alt"></i> Remote/Hybrid</span
+              >
+              <span class="job-level"
+                ><i class="fas fa-chart-line"></i> Entry/Mid Level</span
+              >
+            </div>
+            <p class="job-description">
+              Drive our growth by partnering with universities and organizations
+              to expand Boom-In. You'll manage relationships, close deals, and
+              help position our platform as the leading alumni network solution.
+            </p>
+            <div class="job-requirements">
+              <h4>What We're Looking For:</h4>
+              <ul>
+                <li>
+                  1-3 years of B2B sales or business development experience
+                </li>
+                <li>Strong communication and negotiation skills</li>
+                <li>Ability to build lasting relationships</li>
+                <li>Self-motivated and results-driven</li>
+                <li>Understanding of education sector (preferred)</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary contactTrigger">Apply Now</a>
+          </div>
+
+          <!-- Marketing Specialist -->
+          <div class="job-card">
+            <div class="job-header">
+              <h3>Marketing & Growth Specialist</h3>
+              <span class="job-type">Full-time</span>
+            </div>
+            <div class="job-meta">
+              <span class="job-location"
+                ><i class="fas fa-map-marker-alt"></i> Remote</span
+              >
+              <span class="job-level"
+                ><i class="fas fa-chart-line"></i> Entry/Mid Level</span
+              >
+            </div>
+            <p class="job-description">
+              Shape our brand and drive user acquisition. You'll develop
+              marketing strategies, manage social media, create compelling
+              content, and help us reach students and alumni worldwide.
+            </p>
+            <div class="job-requirements">
+              <h4>What We're Looking For:</h4>
+              <ul>
+                <li>1-3 years of marketing or growth experience</li>
+                <li>
+                  Proficiency with social media, content creation, and analytics
+                </li>
+                <li>Creative thinking and strong writing skills</li>
+                <li>Experience with digital marketing campaigns</li>
+                <li>Passion for startups and growth-focused environments</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary contactTrigger">Apply Now</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Culture Section -->
+      <section class="careers-culture">
+        <div class="culture-content">
+          <h2>Our Culture</h2>
+          <p>
+            At Boom-In, we're building more than a platform—we're building a
+            movement. We believe in radical transparency, continuous learning,
+            and the power of collaboration. Every team member has a voice and
+            the opportunity to shape our future.
+          </p>
+          <div class="culture-values">
+            <div class="value">
+              <h4>🚀 Move Fast</h4>
+              <p>Iterate quickly and learn from feedback</p>
+            </div>
+            <div class="value">
+              <h4>🤝 Collaborate</h4>
+              <p>Work together to solve problems and achieve goals</p>
+            </div>
+            <div class="value">
+              <h4>💡 Innovate</h4>
+              <p>Challenge conventions and think creatively</p>
+            </div>
+            <div class="value">
+              <h4>❤️ Care</h4>
+              <p>Prioritize user success and team wellbeing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Ready to Join Us?</h2>
+          <p>
+            Have a question about our positions or want to learn more? Let's
+            talk!
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary contactTrigger">Get in Touch</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contact Modal (reuse from index.html) -->
+    <div id="contactModal" class="contact-modal-overlay" style="display: none">
+      <div class="contact-modal">
+        <div class="contact-modal-header">
+          <div class="header-content">
+            <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+            <p>We'd love to hear from you. Send us a message!</p>
+          </div>
+          <button class="contact-modal-close" id="contactModalClose">
+            &times;
+          </button>
+        </div>
+
+        <div class="contact-modal-content">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type">Inquiry Type *</label>
+              <select id="inquiry-type" name="inquiry-type" required>
+                <option value="">Select an option...</option>
+                <option value="Job Inquiry">Job Inquiry</option>
+                <option value="Partnership">Partnership</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Boom-In</h4>
+          <p>Connecting alumni, empowering futures.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#" id="privacyPolicyBtn">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Boom-In Network. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

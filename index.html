@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="BoomIn – connecting students and alumni in real-time.">
+    <meta
+      name="description"
+      content="BoomIn – connecting students and alumni in real-time."
+    />
     <title>Boom-In Network - Connecting University Alumni</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -17,162 +20,296 @@
   </head>
 
   <body>
-    <main class="boom-in-static">
-      <nav class="boom-in-appbar">
-        <div class="boom-in-appbar-logo" id="boomInAppbarLogo">Boom-In</div>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <span class="logo-icon">🔗</span>
+          <span>Boom-In</span>
+        </div>
 
-        <!-- Desktop navigation -->
-        <ul class="boom-in-options-list desktop-nav">
-          <li class="boom-in-option-item selected" data-page="home">Home</li>
-          <li class="boom-in-option-item" data-page="platform">Platform</li>
-          <li class="boom-in-option-item" data-page="contact">Contact</li>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a href="#features" class="nav-link">Features</a>
+          </li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <!-- <li class="nav-item">
+            <a href="careers.html" class="nav-link">Careers</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="#" class="nav-link contactTrigger">Contact</a>
+          </li>
         </ul>
 
-        <!-- Mobile hamburger menu -->
-        <button
-          class="mobile-menu-toggle"
-          id="mobileMenuToggle"
-          aria-label="Toggle mobile menu"
-        >
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-      </nav>
+      </div>
+    </nav>
 
-      <!-- Mobile dropdown menu -->
-      <div class="mobile-dropdown" id="mobileDropdown">
-        <ul class="mobile-nav-list">
-          <li class="mobile-nav-item selected" data-page="home">Home</li>
-          <li class="mobile-nav-item" data-page="platform">Platform</li>
-          <li class="mobile-nav-item" data-page="contact">Contact</li>
-        </ul>
-      </div>
-      <!-- Home main title, visible before video -->
-      <div id="homeContent" class="boom-in-center">
-        <h1 class="boom-in-title" id="boomInMainTitle">Boom-In</h1>
-      </div>
-      <!-- Video background below appbar, hidden initially -->
-      <!--
-    <div class="home-bg-video-container" style="display:none;">
-      <video id="homeBgVideo" autoplay muted playsinline>
-        <source src="assets/greece4horizontal.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="home-video-caption">
-        <span class="caption-icon"><i class="fas fa-graduation-cap"></i></span>
-        <span class="caption-main-text">MBA Cohort 2024 - Greece Trip</span>
-      </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-nav-menu">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#features" class="mobile-nav-link">Features</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <!-- <li><a href="careers.html" class="mobile-nav-link">Careers</a></li> -->
+        <li><a href="#" class="mobile-nav-link contactTrigger">Contact</a></li>
+      </ul>
     </div>
-    -->
-      <div
-        id="platformContent"
-        class="platform-hero-container"
-        style="display: none"
-      >
-        <section class="platform-hero">
-          <div class="platform-hero-content">
-            <div class="icon-mosaic-banner">
-              <div class="icon-mosaic-bg">
-                <i class="fas fa-users"></i>
-                <i class="fas fa-university"></i>
-                <i class="fas fa-lightbulb"></i>
-                <i class="fas fa-handshake"></i>
-                <i class="fas fa-comments"></i>
-                <i class="fas fa-calendar-alt"></i>
-                <i class="fas fa-rss"></i>
-                <i class="fas fa-graduation-cap"></i>
-                <i class="fas fa-network-wired"></i>
-                <i class="fas fa-globe"></i>
-              </div>
-            </div>
-            <h1 class="icon-mosaic-title">
-              Connecting Alumni. Empowering Futures.
-            </h1>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="hero-background">
+          <div class="gradient-blob blob-1"></div>
+          <div class="gradient-blob blob-2"></div>
+          <div class="gradient-blob blob-3"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge">Early Access</div>
+          <h1 class="hero-title">The Network You've Been Waiting For</h1>
+          <p class="hero-subtitle">
+            Where students find mentors and alumni discover opportunities. Keep
+            your university connections alive and thriving.
+          </p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary" id="contactTrigger"
+              >Get Started</a
+            >
+            <a href="#features" class="btn btn-secondary">Learn More</a>
           </div>
-        </section>
-        <section class="platform-features-row">
-          <div class="platform-feature-card">
-            <div class="platform-feature-icon">
-              <i class="fas fa-compass"></i>
+        </div>
+        <div class="hero-scroll-indicator">
+          <span></span>
+        </div>
+      </section>
+      <!-- Features Section -->
+      <section id="features" class="features">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Boom-In?</h2>
+          <p class="section-subtitle">
+            Powerful features designed for modern professionals
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
             </div>
-            <h3>Explore</h3>
+            <h3>Connect with Alumni</h3>
             <p>
-              Stay updated on the latest activity and highlights across the
-              platform.
+              Build meaningful professional relationships with graduates from
+              your university across the globe.
             </p>
           </div>
-          <div class="platform-feature-card">
-            <div class="platform-feature-icon">
+
+          <div class="feature-card">
+            <div class="feature-icon">
               <i class="fas fa-comments"></i>
             </div>
-            <h3>Connect</h3>
-            <p>Communicate with others and build meaningful connections.</p>
-          </div>
-          <div class="platform-feature-card">
-            <div class="platform-feature-icon">
-              <i class="fas fa-university"></i>
-            </div>
-            <h3>Discover</h3>
-            <p>Find groups, spaces, and people that match your interests.</p>
-          </div>
-          <div class="platform-feature-card">
-            <div class="platform-feature-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Learn</h3>
+            <h3>Real-Time Messaging</h3>
             <p>
-              Access tools, resources, and insights to help you grow and
-              succeed.
+              Chat, collaborate, and stay in touch with your network in
+              real-time through our intuitive messaging.
             </p>
           </div>
-        </section>
-      </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Opportunities</h3>
+            <p>
+              Discover job openings, mentorship programs, and business
+              opportunities within your alumni network.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Events & Meetups</h3>
+            <p>
+              Organize and attend alumni events, networking sessions, and
+              reunions in your area.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Mentor & Learn</h3>
+            <p>
+              Share knowledge and expertise with mentorship programs that
+              benefit the entire community.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3>Global Network</h3>
+            <p>
+              Connect with alumni across continents and expand your professional
+              opportunities worldwide.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="about-container">
+          <div class="about-content">
+            <h2 class="about-title">About Boom-In</h2>
+            <p class="about-text">
+              Founded by former alumni who experienced firsthand how university
+              networks fade after graduation. Boom-In transforms that problem
+              into opportunity by creating vibrant digital communities where
+              students connect with alumni and meaningful professional
+              relationships continue to flourish.
+            </p>
+            <p class="about-text">
+              We're building the go-to platform where students find mentorship,
+              alumni discover career opportunities, and everyone unlocks the
+              full potential of their university network. Our vision is simple:
+              connect every student with the alumni network they need, and help
+              alumni stay engaged with their alma mater.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">2024</span>
+                <span class="stat-label">Year Founded</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">1st</span>
+                <span class="stat-label">Beta Users</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">Growing</span>
+                <span class="stat-label">Launching Nationwide</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-visual">
+            <div class="icon-grid">
+              <div class="icon-item">
+                <div class="icon-box">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <p>Mentorship</p>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <p>Opportunity</p>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <p>Community</p>
+              </div>
+              <div class="icon-item">
+                <div class="icon-box">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <p>Growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clear Next Steps / CTA Section -->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Does Your School Need This?</h2>
+          <p>
+            Reach out and get your university added to the Boom-In network.
+            Partner with us to unlock alumni connections for your students and
+            graduates.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary contactTrigger"
+              >Get Your School Added</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Modal Popup -->
       <div
-        id="contactContent"
-        class="contact-page diagonal-contact"
+        id="contactModal"
+        class="contact-modal-overlay"
         style="display: none"
       >
-        <div class="diagonal-container">
-          <div class="diagonal-left">
+        <div class="contact-modal">
+          <div class="contact-modal-header">
+            <div class="header-content">
+              <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+              <p>We'd love to hear from you. Send us a message!</p>
+            </div>
+            <button class="contact-modal-close" id="contactModalClose">
+              &times;
+            </button>
+          </div>
+
+          <div class="contact-modal-content">
             <form class="contact-form" id="contactForm">
-              <div class="contact-header-row">
-                <h2 class="contact-title">Contact Us</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
               </div>
-              <div class="form-group floating-label">
-                <input type="text" id="name" name="name" required />
-                <label for="name">Name</label>
+
+              <div class="form-group">
+                <label for="inquiry-type">Inquiry Type *</label>
+                <select id="inquiry-type" name="inquiry-type" required>
+                  <option value="">Select an option...</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Add My Institution">Add My Institution</option>
+                  <option value="Collaboration Opportunity">
+                    Collaboration Opportunity
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
-              <div class="form-group floating-label">
-                <input type="email" id="email" name="email" required />
-                <label for="email">Email</label>
+
+              <div class="form-group">
+                <label for="heard-from">How did you hear about us? *</label>
+                <input type="text" id="heard-from" name="heard-from" required />
               </div>
-              <div class="form-group floating-label">
+
+              <div class="form-group">
+                <label for="message">Message *</label>
                 <textarea
                   id="message"
                   name="message"
-                  rows="5"
+                  rows="4"
                   required
                 ></textarea>
-                <label for="message">Message</label>
               </div>
-              <button type="submit" class="contact-submit">Send Message</button>
+
+              <button type="submit" class="btn btn-primary btn-large">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
             </form>
-          </div>
-          <div class="diagonal-right">
-            <div class="contact-logo-large">Boom-In</div>
-            <div class="contact-info-block">
-              <div class="contact-info-item">
-                <i class="fas fa-envelope"></i>
-                boominnetworkenterprise@gmail.com
-              </div>
-              <!--<div class="contact-info-item"><i class="fas fa-map-marker-alt"></i> Charleston, SC</div>-->
-            </div>
-            <div class="contact-social">
-              <!--<a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>-->
-              <!--<a href="#" title="X"><span class="x-logo">𝕏</span></a>-->
-              <!--<a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>-->
-            </div>
           </div>
         </div>
       </div>
@@ -237,21 +374,33 @@
         </div>
       </div>
     </main>
-    <footer class="boom-in-footer">
+
+    <!-- Footer -->
+    <footer class="footer">
       <div class="footer-content">
-        <nav class="footer-nav">
-          <a href="#" class="footer-link" id="footerHomeLink">Home</a>
-          <a href="#" class="footer-link" id="footerPlatformLink">Platform</a>
-          <a href="#" class="footer-link" id="footerContactLink">Contact</a>
-        </nav>
-        <div class="footer-policy-btn-container">
-          <button id="privacyPolicyBtn" class="footer-policy-btn" disabled>
-            Privacy Policy
-          </button>
+        <div class="footer-section">
+          <h4>Boom-In</h4>
+          <p>Connecting alumni, empowering futures.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#" class="contactTrigger">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#" id="privacyPolicyBtn">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2025 Boom-In Network. All rights reserved.
+        <p>&copy; 2026 Boom-In Network. All rights reserved.</p>
       </div>
     </footer>
     <script src="script.js"></script>
