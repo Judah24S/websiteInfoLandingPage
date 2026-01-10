@@ -18,6 +18,52 @@ if (hamburger) {
   });
 }
 
+// Particle effect for background
+function createParticles() {
+  const particleCount = 30;
+  const container = document.body;
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement("div");
+    particle.style.position = "fixed";
+    particle.style.width = Math.random() * 2 + 1 + "px";
+    particle.style.height = particle.style.width;
+    particle.style.background =
+      Math.random() > 0.5 ? "rgba(0, 217, 255, 0.5)" : "rgba(255, 0, 110, 0.3)";
+    particle.style.borderRadius = "50%";
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.top = Math.random() * 100 + "%";
+    particle.style.pointerEvents = "none";
+    particle.style.zIndex = "-1";
+    particle.style.animation = `float-particle ${
+      Math.random() * 20 + 10
+    }s infinite ease-in-out`;
+    particle.style.boxShadow =
+      "0 0 " + (Math.random() * 10 + 5) + "px rgba(0, 217, 255, 0.4)";
+    container.appendChild(particle);
+  }
+}
+
+// Add particle animation to stylesheet
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes float-particle {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+    25% { transform: translateY(-30px) translateX(20px); opacity: 0.6; }
+    50% { transform: translateY(-60px) translateX(-20px); opacity: 0.3; }
+    75% { transform: translateY(-30px) translateX(30px); opacity: 0.5; }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { text-shadow: 0 0 20px rgba(0, 217, 255, 0.5); }
+    50% { text-shadow: 0 0 40px rgba(0, 217, 255, 0.8), 0 0 20px rgba(255, 0, 110, 0.4); }
+  }
+`;
+document.head.appendChild(style);
+
+// Initialize particles on load
+window.addEventListener("load", createParticles);
+
 // Contact Modal functionality
 const contactTriggers = document.querySelectorAll(".contactTrigger");
 const contactModal = document.getElementById("contactModal");
