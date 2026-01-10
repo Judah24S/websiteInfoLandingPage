@@ -2758,7 +2758,7 @@ body::before {
   flex-direction: column;
   gap: 0.4rem;
 }
-
+/* Form Labels and Inputs */
 .form-group label {
   font-size: 1rem;
   color: #ffffff;
